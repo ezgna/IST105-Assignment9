@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DNA Center Interfaces</title>
+</head>
+<body>
+  <h1>Device Interfaces</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <label>Device IP:
+      <input type="text" name="ip" value="{{ device_ip|default:'' }}" />
+    </label>
+    <button type="submit">Show Interfaces</button>
+  </form>
+
+  {% if device_ip %}
+    <h2>Interfaces for {{ device_ip }}</h2>
+
+    {% if success and interfaces %}
+      <table border="1" cellpadding="6">
+        <tr>
+          <th>Interface</th>
+          <th>Status</th>
+          <th>VLAN</th>
+          <th>Speed</th>
+        </tr>
+        {% for i in interfaces %}
+        <tr>
+          <td>{{ i.portName }}</td>
+          <td>{{ i.status }}</td>
+          <td>{{ i.vlanId }}</td>
+          <td>{{ i.speed }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    {% elif success and not interfaces %}
+      <p>No interfaces found.</p>
+    {% else %}
+      <p style="color: red;">Failed to fetch interfaces ❌</p>
+    {% endif %}
+  {% endif %}
+
+  <p><a href="/auth/">Back to Auth</a></p>
+  <p><a href="/devices/">Back to Devices</a></p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DNA Center Auth</title>
+</head>
+<body>
+  <h1>DNA Center Authentication</h1>
+
+  {% if success %}
+    <p style="color: green;">Authentication successful ✅</p>
+    <h3>Token</h3>
+    <pre>{{ token }}</pre>
+  {% else %}
+    <p style="color: red;">Authentication failed ❌</p>
+  {% endif %}
+
+  <p><a href="/devices/">View Network Devices</a></p>
+  <p><a href="/interfaces/">View Device Interfaces</a></p>
+</body>
+</html>

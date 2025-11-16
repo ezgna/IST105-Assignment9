@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-1b5r)5+)no8w19kvv&)=8jghmgh(zu=rd22n%lj4t)ha3tqt=p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -122,3 +122,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# MONGODB_URI = "mongodb://localhost:27017"
+MONGODB_URI = "mongodb://172.31.66.166:27017"
+MONGODB_DB_NAME = "dnac_logs"
+MONGODB_COLLECTION = "interactions"
