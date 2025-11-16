@@ -22,7 +22,7 @@
 
 ### 1. MongoDB-EC2
 
-1. Install MongoDB (for example, MongoDB 7.x from the official repository).
+1. Install MongoDB.
 
 2. Start and enable the service:
 
@@ -38,7 +38,7 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/<user>/IST105-Assignment9.git
+   git clone https://github.com/ezgna/IST105-Assignment9.git
    cd IST105-Assignment9
    ```
 
